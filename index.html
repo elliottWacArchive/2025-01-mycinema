@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My cinema</title>
+	<script src="script/script.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>My cinema</h1>
+	<h2>Name</h2>
+    <input type="text" id="name" placeholder="Name">
+	<select name="nameOption" id="selectName">
+		<option value="two">First&Lastname</option>
+		<option value="firstname">Firstname</option>
+		<option value="lastname">Lastname</option>
+	</select>
+    <button onclick="searchUser()">Search</button>
+	<div id="main-container">
+		<div id="userResults"></div>
+		<div id="userManager">
+			<h2>No user selected.</h2>
+			<div>
+				<h3 id="firstname">Firstname : </h3>
+				<h3 id="lastname">Lastname : </h3>
+				<h3 id="email">Email : </h3>
+				<h3 id="birthdate">Birthdate : </h3>
+				<h3 id="address">Adress : </h3>
+				<h3 id="zipcode">Zipcode : </h3>
+				<h3 id="city">City : </h3>
+				<h3 id="country">Country : </h3>
+				<h3>Subscription : </h3>
+				<div id="subInfo">Subscription information : </div>
+				<div class="row">
+					<div>Change Subscription : </div>
+					<select name="subscriptionManager" id="selectSubscription">
+						<option value="none">none</option>
+						<option value="VIP">VIP</option>
+						<option value="GOLD">GOLD</option>
+						<option value="Classic">Classic</option>
+						<option value="Passday">Pass day</option>
+					</select>
+					<button onclick="changeSubscription()">OK</button>
+				</div>
+				<h3>Log : </h3>
+				<div id="log"></div>
+				<button onclick="viewLog()">See Log</button>
+			</div>
+		</div>
+	</div>
+	<h2>Movie</h2>
+	<input type="text" id="movie" placeholder="Movie">
+	<select name="movieOption" id="selectMovie">
+		<option value="title">Title</option>
+		<option value="genre">Genre</option>
+		<option value="director">Director</option>
+	</select>
+	<button onclick="searchMovie()">Search</button>
+	<div id="main-container">
+		<div id="movieResults"></div>
+		<div id="movieManager">
+			<h2>No Movie selected.</h2>
+			<h3 id="title">Title : </h3>
+			<h3 id="director">Director : </h3>
+			<h3 id="genre">Genre : </h3>
+			<h3 id="date">Date : </h3>
+			<h3 id="duration">Duration : </h3>
+			<h3 id="rating">Rating : </h3>
+		</div>
+	</div>
+</body>
+</html>

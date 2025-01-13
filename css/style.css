@@ -1,0 +1,43 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	overflow-x: hidden;
+	background-color: black;
+	color: white;
+}
+
+#main-container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+#movieResults, #userResults {
+	border: 1px solid white;
+	width: 20%;
+	margin: 20px;
+	overflow-x: scroll;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.user, .movie {
+	width: 100%;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.user:hover, .movie:hover {
+	background-color: aqua;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
