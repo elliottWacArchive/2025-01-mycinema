@@ -1,0 +1,73 @@
+body {
+	font-family: 'Qablasco', sans-serif;
+}
+
+button, input, select {
+	font-family: 'Qablasco', sans-serif;
+}
+
+.text-result {
+	font-family: 'minecraft', sans-serif;
+}
+
+
+/* h1 {
+	font-family: 'GothicPixels', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+	font-family: 'Redaction_50-regular', sans-serif;
+} */
+
+.user, .movie {
+	font-family: 'minecraft', sans-serif;
+}
+
+table {
+	font-family: 'minecraft', sans-serif;
+}
+
+#footer {
+	font-family: 'Pixelary', sans-serif;
+	font-size: 2em;
+}
+
+@font-face {
+	font-family: 'minecraft';
+	src: url('../fonts/minecraft.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'GothicPixels';
+	src: url('../fonts/GothicPixels.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Qablasco';
+	src: url('../fonts/Qablasco.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Pixelary';
+	src: url('../fonts/Pixelary.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Redaction_10-regular';
+	src: url('../fonts/redaction/OTF/Redaction10-Regular.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Redaction_20-regular';
+	src: url('../fonts/redaction/OTF/Redaction20-Regular.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Redaction_35-regular';
+	src: url('../fonts/redaction/OTF/Redaction35-Regular.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Redaction_50-regular';
+	src: url('../fonts/redaction/OTF/Redaction50-Regular.otf') format('opentype');
+}

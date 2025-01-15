@@ -6,68 +6,151 @@
     <title>My cinema</title>
 	<script src="script/script.js"></script>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
-    <h1>My cinema</h1>
-	<h2>Name</h2>
-    <input type="text" id="name" placeholder="Name">
-	<select name="nameOption" id="selectName">
-		<option value="two">First&Lastname</option>
-		<option value="firstname">Firstname</option>
-		<option value="lastname">Lastname</option>
-	</select>
-    <button onclick="searchUser()">Search</button>
-	<div id="main-container">
-		<div id="userResults"></div>
-		<div id="userManager">
-			<h2>No user selected.</h2>
-			<div>
-				<h3 id="firstname">Firstname : </h3>
-				<h3 id="lastname">Lastname : </h3>
-				<h3 id="email">Email : </h3>
-				<h3 id="birthdate">Birthdate : </h3>
-				<h3 id="address">Adress : </h3>
-				<h3 id="zipcode">Zipcode : </h3>
-				<h3 id="city">City : </h3>
-				<h3 id="country">Country : </h3>
-				<h3>Subscription : </h3>
-				<div id="subInfo">Subscription information : </div>
-				<div class="row">
-					<div>Change Subscription : </div>
-					<select name="subscriptionManager" id="selectSubscription">
-						<option value="none">none</option>
-						<option value="VIP">VIP</option>
-						<option value="GOLD">GOLD</option>
-						<option value="Classic">Classic</option>
-						<option value="Passday">Pass day</option>
-					</select>
-					<button onclick="changeSubscription()">OK</button>
+	<div id="header">
+		<h1>My cinema</h1>
+	</div>
+	<div id="center-container">
+		<div id="name-container">
+			<h2>Name</h2>
+			<div id="input" class="row">
+				<input type="text" id="name" placeholder="Name">
+				<select name="nameOption" id="selectName">
+					<option value="two">First&Lastname</option>
+					<option value="firstname">Firstname</option>
+					<option value="lastname">Lastname</option>
+				</select>
+				<button onclick="searchUser();">Search</button>
+			</div>
+			<div id="main-container">
+				<div id="top-container" class="row">
+					<div class="result-container">
+						<div id="userResults"></div>
+						<div class="prev-container">
+							<div id="prevUser" onclick="prevPage()"> Previous </div>
+							<div id="curUser"></div>
+							<div id="nextUser" onclick="nextPage()"> Next </div>
+						</div>
+					</div>
+					<div id="userManager">
+						<h3 class="cat">No user selected.</h3>
+						<div>
+							<div class="row" id="firstname"><h3>Firstname : </h3><div class="text-result"></div></div>
+							<div class="row" id="lastname"><h3>Lastname : </h3><div class="text-result"></div></div>
+							<div class="row" id="email"><h3>Email : </h3><div class="text-result"></div></div>
+							<div class="row" id="birthdate"><h3>Birthdate : </h3><div class="text-result"></div></div>
+							<div class="row" id="address"><h3>Adress : </h3><div class="text-result"></div></div>
+							<div class="row" id="zipcode"><h3>Zipcode : </h3><div class="text-result"></div></div>
+							<div class="row" id="city"><h3>City : </h3><div class="text-result"></div></div>
+							<div class="row" id="country"><h3>Country : </h3><div class="text-result"></div></div>
+							<h3>Subscription : </h3>
+							<div id="subInfo">Subscription information : </div>
+							<div class="row">
+								<div>Change Subscription : </div>
+								<select name="subscriptionManager" id="selectSubscription">
+									<option value="none">none</option>
+									<option value="VIP">VIP</option>
+									<option value="GOLD">GOLD</option>
+									<option value="Classic">Classic</option>
+									<option value="Passday">Pass day</option>
+								</select>
+								<button onclick="changeSubscription()">OK</button>
+							</div>
+						</div>
+					</div>
 				</div>
-				<h3>Log : </h3>
+				<div class="row">
+					<h3>Log : </h3>
+					<button onclick="viewLog()">See Log</button>
+					<button onclick="addMovie()">Add Session</button>
+				</div>
 				<div id="log"></div>
-				<button onclick="viewLog()">See Log</button>
+			</div>
+		</div>
+		<div id="movie-container">
+			<h2>Movie</h2>
+			<div id="input" class="row">
+				<input type="text" id="movie" placeholder="Movie">
+				<select name="movieOption" id="selectMovie">
+					<option value="title">Title</option>
+					<option value="genrename">Genre</option>
+					<option value="director">Director</option>
+					<option value="distname">Distributor</option>
+				</select>
+				<button onclick="searchMovie()">Search</button>
+			</div>
+			<div id="main-container">
+				<div id="top-container" class="row">
+					<div class="result-container">
+						<div id="movieResults"></div>
+						<div class="prev-container">
+							<div id="prevMovie" onclick="prevPageMovie()"> Previous </div>
+							<div id="curMovie"></div>
+							<div id="nextMovie" onclick="nextPageMovie()"> Next </div>
+						</div>
+					</div>
+					<div id="movieManager" class="column">
+						<div class="row full">
+							<div id="img-container">
+								<img id="imgSection" src="" alt="">
+							</div>
+							<div id="movieTextManager">
+								<h3 class="cat">No Movie selected.</h3>
+								<div class="row" id="title"><h3>Title : </h3><div class="text-result"></div></div>
+								<div class="row" id="director"><h3>Director : </h3><div class="text-result"></div></div>
+								<div class="row" id="distributor"><h3>Distributor : </h3><div class="text-result"></div></div>
+								<div class="row" id="genre"><h3>Genre : </h3><div class="text-result"></div></div>
+								<div class="row" id="date"><h3>Date : </h3><div class="text-result"></div></div>
+								<div class="row" id="duration"><h3>Duration : </h3><div class="text-result"></div></div>
+								<div class="row" id="rating"><h3>Rating : </h3><div class="text-result"></div></div>
+							</div>
+						</div>
+						<div style="margin: 10px 0;" class="row">
+							<h3>Session : </h3>
+							<button onclick="viewSession()">See Session</button>
+							<button onclick="viewSessionCreator()">Create Session</button>
+						</div>
+						<div id="makeSession">
+							<div class="row">
+								<h3>Room : </h3>
+								<select name="room" id="selectRoom">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">10</option>
+									<option value="5">11</option>
+									<option value="6">12</option>
+									<option value="7">13</option>
+									<option value="8">14</option>
+									<option value="9">15</option>
+									<option value="10">16</option>
+									<option value="11">20</option>
+									<option value="12">21</option>
+									<option value="13">22</option>
+									<option value="14">23</option>
+									<option value="15">30</option>
+									<option value="16">31</option>
+									<option value="17">32</option>
+								</select>
+							</div>
+							<div class="row">
+								<h3>Date : </h3>
+								<input type="date" id="dateSession">
+								<input type="time" id="timeSession">
+							</div>
+							<button onclick="createSession()">Create</button>
+						</div>
+					</div>
+				</div>
+				<div id="session"></div>
 			</div>
 		</div>
 	</div>
-	<h2>Movie</h2>
-	<input type="text" id="movie" placeholder="Movie">
-	<select name="movieOption" id="selectMovie">
-		<option value="title">Title</option>
-		<option value="genre">Genre</option>
-		<option value="director">Director</option>
-	</select>
-	<button onclick="searchMovie()">Search</button>
-	<div id="main-container">
-		<div id="movieResults"></div>
-		<div id="movieManager">
-			<h2>No Movie selected.</h2>
-			<h3 id="title">Title : </h3>
-			<h3 id="director">Director : </h3>
-			<h3 id="genre">Genre : </h3>
-			<h3 id="date">Date : </h3>
-			<h3 id="duration">Duration : </h3>
-			<h3 id="rating">Rating : </h3>
-		</div>
+	<div id="footer">
+		<div>Elliott</div>
+		<div>2025</div>
 	</div>
 </body>
 </html>

@@ -6,38 +6,263 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 100vw;
+	height: 100vh;
 	overflow-x: hidden;
+	font-size: 1.1em;
 	background-color: black;
-	color: white;
+	color: red;
 }
 
-#main-container {
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h1 {
+	margin-top: 10px;
+}
+
+h2 {
+	margin: 0.5em;
+}
+
+.cat {
+	margin: 0.5em;
+}
+
+h3 {
+	font-size: 1.5em;
+	padding-right: 10px;
+}
+
+.text-result {
+	font-size: 1em;
+}
+
+th, td {
+	border: 1px solid red
+}
+
+.movie-lign:hover {
+	cursor: pointer;
+	background-color: red;
+	color: black;
+}
+
+#header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
+}
+
+#footer {
+	background-color: red;
+	color: black;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#footer div {
+	padding: 0 30px;
+}
+
+#makeSession {
+	display: none;
+	width: fit-content;
+}
+
+#makeSession button {
+	width: calc(100% - 4px);
+}
+
+.full {
+	width: 100%;
+}
+
+table {
+	user-select: none;
+	width: 100%;
+}
+
+input {
+	background-color: black;
+	outline: none;
+	border: 1px red solid;
+	color: red;
+}
+
+input::placeholder {
+	color: red;
+	opacity: 0.7;
+}
+
+input, select, button {
+	font-size: 1.1em;
+	margin: 2px;
+	padding: 0px;
+	height: 30px;
+}
+
+input {
+	height: 28px;
+}
+
+select {
+	background-color: black;
+	outline: none;
+	border: 1px red solid;
+	color: red;	
+}
+
+select option:hover {
+	background-color: red;
+	color: black;
+}
+
+button {
+	background-color: black;
+	border: 1px red solid;
+	color: red;
+	outline: none;
+}
+
+button:hover {
+	background-color: red;
+	color: black;
+}
+
+#center-container {
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: row;
 }
 
+#log, #session {
+	border: 1px solid red;
+	margin: 10px;
+	min-height: 3em;
+	max-height: 10em;
+	overflow-y: scroll;
+}
+
+#name-container, #movie-container {
+	border: 1px solid red;
+	margin: 10px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#movieTextManager {
+	width: 80%;
+}
+
+#main-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#top-container {
+	height: 100%;
+	align-items: flex-start;
+}
+
 #movieResults, #userResults {
-	border: 1px solid white;
-	width: 20%;
-	margin: 20px;
-	overflow-x: scroll;
+	border: 1px solid red;
+	height: 12em;
+	max-height: 12em;
+	width: calc(100% - 2px);
+	overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 }
 
-.user, .movie {
+#imgSection {
+	display: none;
 	width: 100%;
+	height: 100%;
+}
+
+#userManager, #movieManager {
+	margin: 10px;
+	width: calc(70% - 20px);
+}
+
+.result-container {
+	user-select: none;
+	margin: 10px;
+	width: calc(30% - 20px);
+	height: calc(100% - 20px);
+	display: flex;
+	flex-direction: column;
+}
+
+#img-container {
+	border: red solid 1px;
+	margin: 0 10px 10px 0;
+	width: calc(20% - 20px);
+	height: 12em;
+}
+
+.prev-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.prev-container div:hover {
 	cursor: pointer;
-	white-space: nowrap;
+	text-decoration: underline;
+	color: black;
+	background-color: red;
+}
+
+.user, .movie {
+	width: calc(100% - 6px);
+	cursor: pointer;
+	padding: 3px;
+	font-size: 1em;
+	hyphens: auto;
 }
 
 .user:hover, .movie:hover {
-	background-color: aqua;
+	background-color: red;
+	color: black;
 }
 
 .row {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: red;
 }

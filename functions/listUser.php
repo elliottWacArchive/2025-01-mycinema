@@ -1,31 +1,14 @@
 <?php
 
-function listUser($name, $option)
-{
-    include '../includes/dbh.inc.php';
-    if ($option == 'two') {
-        $sql = "SELECT * FROM user WHERE CONCAT(UPPER(firstname), ' ' ,UPPER(lastname)) LIKE UPPER('%$name%')";
-    } elseif ($option == 'firstname') {
-        $sql = "SELECT * FROM user WHERE UPPER(firstname) LIKE UPPER('%$name%')";
-    } elseif ($option == 'lastname') {
-        $sql = "SELECT * FROM user WHERE UPPER(lastname) LIKE UPPER('%$name%')";
-    }
+require '../sources/listUser.php';
 
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<div id=" . $row["id"] . " class='user'>" . $row["firstname"] . " " . $row["lastname"] . "</div>";
-        }
-    } else {
-        echo "0 results";
-    }
-}
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$resultsPerPage = isset($_GET['resultsPerPage']) ? (int)$_GET['resultsPerPage'] : 10;
 
 if (isset($_GET['two'])) {
-    listUser($_GET['two'], 'two');
+    listUser($_GET['two'], 'two', $page, $resultsPerPage);
 } elseif (isset($_GET['firstname'])) {
-    listUser($_GET['firstname'], 'firstname');
+    listUser($_GET['firstname'], 'firstname', $page, $resultsPerPage);
 } elseif (isset($_GET['lastname'])) {
-    listUser($_GET['lastname'], 'lastname');
+    listUser($_GET['lastname'], 'lastname', $page, $resultsPerPage);
 }
