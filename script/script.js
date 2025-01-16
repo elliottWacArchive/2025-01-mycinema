@@ -221,6 +221,30 @@ function viewSession() {
 	.catch(error => console.error('Error:', error));
 }
 
+function searchSession() {
+	const date = document.getElementById('dateSearch').value;
+	const time = document.getElementById('timeSearch').value;
+	if (date == "") {
+		alert('Please fill date');
+		return;
+	} else {
+		fetch(`functions/searchSession.php?date=${date}&time=${time}`)
+		.then(response => response.text())
+		.then(data => {
+			if (data == "0 results") {
+				document.getElementById('session').innerHTML = data;
+				return;
+			} else {
+				document.getElementById('session').innerHTML = "<table></table>";
+				document.querySelector('#session table').innerHTML ="<tr><th>selection</th><th>title</th><th>number</th><th>room</th><th>date</th><th>floor</th><th>seats</th></tr>" + data;
+			}
+		})
+		.catch(error => console.error('Error:', error));
+	}
+	console.log(date);
+	console.log(time);
+}
+
 function viewSessionCreator() {
 	document.getElementById('makeSession').style.display = "block";
 }
