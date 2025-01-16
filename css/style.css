@@ -166,7 +166,7 @@ button:hover {
 }
 
 #movieTextManager {
-	width: 80%;
+	width: 70%;
 }
 
 #main-container {
@@ -215,7 +215,7 @@ button:hover {
 #img-container {
 	border: red solid 1px;
 	margin: 0 10px 10px 0;
-	width: calc(20% - 20px);
+	width: calc(30% - 20px);
 	height: 12em;
 }
 
