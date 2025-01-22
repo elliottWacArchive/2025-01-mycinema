@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+	<link rel="stylesheet" href="../../css/user-page/style.css">
+	<link rel="stylesheet" href="../../css/fonts.css">
 </head>
 <body>
     <h1>Login</h1>
-    <h3>Mail</h3>
     <form method="POST">
+		<h3>Mail</h3>
         <input type="mail" name="mail" id="mail" required>
         <h3>Password</h3>
         <input type="password" name="password" id="password" required>

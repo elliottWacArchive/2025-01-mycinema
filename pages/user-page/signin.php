@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signin</title>
+	<link rel="stylesheet" href="../../css/user-page/style.css">
+	<link rel="stylesheet" href="../../css/fonts.css">
 </head>
 <body>
-    <h1>SignIn</h1>
+    <h1>Sign In</h1>
     <div class="main-container">
         <form method="post">
             <div>
