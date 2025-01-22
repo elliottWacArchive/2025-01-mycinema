@@ -23,26 +23,26 @@ if (!checkPassword($id, $pwd)) {
     <title>User Page</title>
 	<link rel="stylesheet" href="../../css/user-page/style.css">
 	<link rel="stylesheet" href="../../css/fonts.css">
+	<script src="../../script/user-page/script.js"></script>
 </head>
 <body>
 	<div id="header">
+	<form method="post" action="">
+		<button type="submit" name="logout" value="logout">logout</button>
+	</form>
 	<h1>Welcome <?php echo htmlspecialchars(getUser($id, 'firstname')); ?> !</h1>
 	<img src="../../img/parameter.png" alt="">
 	</div>
 	<div id="center">
-		<div class="movie-container">
-			<h2>Movie</h2>
-			<div>
-				
+		<h1>Movie</h1>
+		<div id="movie-container">
+ 			<!-- <div class="movie-card">
+				<div class="movie-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: marquee 10s linear infinite;">Spider man</div>
+				<img src="https://fr.web.img5.acsta.net/medias/nmedia/00/00/00/33/spiderman.jpg" class="movie-img">
+				<div class="movie-session"></div> -->
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<form method="post" action="">
-			<button type="submit" name="logout" value="logout">logout</button>
-		</form>
-	</div>
-
     <?php
     if (isset($_POST['logout'])) {
         include '../../sources/user-interface/logout.php';
@@ -50,5 +50,9 @@ if (!checkPassword($id, $pwd)) {
         logout();
     }
     ?>
+	<div id="footer">
+		<div>Elliott</div>
+		<div>2025</div>
+	</div>
 </body>
 </html>
