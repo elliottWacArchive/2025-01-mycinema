@@ -22,14 +22,37 @@ body {
 	flex-direction: row;
 }
 
-#header img {
+#header a {
 	height: 40%;
+}
+
+#header a:hover {
+	transform: scale(1.2);
+	transition: transform 0.2s ease-in-out;
+}
+
+#header img {
+	height: 100%;
 	transition: transform 0.5s;
 	cursor: pointer;
 }
 
-#header img:hover {
+#paramImg:hover {
 	transform: rotateZ(90deg);
+}
+
+#backImg:hover {
+	animation: back 0.5s linear;
+}
+
+@keyframes back {
+	/* 0% { transform: translateX(10px); } */
+	50% { transform: translateX(-10px); }
+	70% { transform: translateX(5px); }
+	80% { transform: translateX(-5px); }
+	85% { transform: translateX(3px); }
+	90% { transform: translateX(-3px); }
+	100% { transform: translateX(0px); }
 }
 
 #center {
@@ -49,7 +72,44 @@ body {
 	align-items: center;
 }
 
+.search-container {
+	margin: 5% 0;
+}
+
+#parameter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#parameter-container {
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+}
+
+#info-container, #config-container {
+	border: 1px solid red;
+	padding: 20px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: self-start;
+}
+
+.inline {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
 .movie-card {
+	user-select: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
 	flex: 0 0 auto;
 	margin: 10px;
 	height: 300px;
@@ -59,16 +119,23 @@ body {
 	overflow-x: hidden;
 }
 
-.movie-card:hover {
+.select-movie {
 	cursor: pointer;
+	width: 100%;
+}
+
+.select-movie:hover {
 	background-color: red;
 	color: black;
 }
 
-.movie-card img {
+.movie-img {
+	flex: 0 0 auto;
 	border: 1px solid red;
 	aspect-ratio: 2/3;
 	width: 80%;
+	background-image: url("../../img/poster.png");
+	background-size: cover;
 }
 
 @keyframes marquee {
