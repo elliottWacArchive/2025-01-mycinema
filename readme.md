@@ -18,4 +18,4 @@
 
 ## 3. Autre
 - La base de donnée a été légerement modifié en intégrant une colonne password à la table user, afin de permettre aux utilisateur de se connecter. La base de donnée est accessible à `./includes/my_cinema.sql`.
-- L'aspect visuel brut et 'sale' du site est voulu.
+- L'aspect visuel brut et "sale" du site est voulu.
