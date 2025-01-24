@@ -244,18 +244,3 @@ button:hover {
 	background-color: red;
 	color: black;
 }
-
-/* width */
-::-webkit-scrollbar {
-	width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-	background: none;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-	background: red;
-}

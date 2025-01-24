@@ -71,3 +71,24 @@ table {
 	font-family: 'Redaction_50-regular';
 	src: url('../fonts/redaction/OTF/Redaction50-Regular.otf') format('opentype');
 }
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: red;
+}
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: red transparent;
+}

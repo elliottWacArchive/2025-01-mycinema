@@ -1,5 +1,5 @@
 async function getMovie(date1, date2) {
-	const response = await fetch(`../../sources/user-interface/getMovie.php?date1=${date1}&date2=${date2}`);
+	const response = await fetch(`../../functions/user-interface/getMovie.php?date1=${date1}&date2=${date2}`);
 	const data = await response.text();
 	return data;
 }
@@ -24,10 +24,6 @@ async function getNewPoster($name, $id) {
 	.then(data => {
 		img.style.backgroundImage = `url('${data.Poster}')`;
 	});
-}
-
-function cc(param) {
-	console.log(param);
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
