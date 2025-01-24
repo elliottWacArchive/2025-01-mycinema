@@ -15,6 +15,21 @@ async function getPoster($name, $id) {
 	});
 }
 
+async function getNewPoster($name, $id) {
+	const key = '6bf02cf0';
+	const img = document.getElementById($id);
+	const url = `https://www.omdbapi.com/?t=${$name}&apikey=${key}`;
+	fetch(url)
+	.then(response => response.json())
+	.then(data => {
+		img.style.backgroundImage = `url('${data.Poster}')`;
+	});
+}
+
+function cc(param) {
+	console.log(param);
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
 	document.getElementById('movie-container').innerHTML = await getMovie('2018-01-01', '2018-01-03');
 	for (let i = 0; i < document.getElementsByClassName('movie-card').length; i++) {
@@ -51,22 +66,22 @@ document.addEventListener('click', async function (event) {
 	const userId = document.getElementById('idSelector').innerText;
 	if (event.target.id === 'firstnameValidation') {
 		const firstname = document.getElementById('firstname').value;
-		const response = await fetch(`../../sources/user-interface/changeUser.php?id=${userId}&option=firstname&value=${firstname}`);
+		const response = await fetch(`../../functions/user-interface/changeUser.php?id=${userId}&option=firstname&value=${firstname}`);
 		const data = await response.text();
 		document.getElementById('alert').innerHTML = data;
 	} else if (event.target.id === 'lastnameValidation') {
 		const lastname = document.getElementById('lastname').value;
-		const response = await fetch(`../../sources/user-interface/changeUser.php?id=${userId}&option=lastname&value=${lastname}`);
+		const response = await fetch(`../../functions/user-interface/changeUser.php?id=${userId}&option=lastname&value=${lastname}`);
 		const data = await response.text();
 		document.getElementById('alert').innerHTML = data;
 	} else if (event.target.id === 'mailValidation') {
 		const email = document.getElementById('mail').value;
-		const response = await fetch(`../../sources/user-interface/changeUser.php?id=${userId}&option=email&value=${email}`);
+		const response = await fetch(`../../functions/user-interface/changeUser.php?id=${userId}&option=email&value=${email}`);
 		const data = await response.text();
 		document.getElementById('alert').innerHTML = data;
 	} else if (event.target.id === 'passwordValidation') {
 		const password = document.getElementById('password').value;
-		const response = await fetch(`../../sources/user-interface/changeUser.php?id=${userId}&option=password&value=${password}`);
+		const response = await fetch(`../../functions/user-interface/changeUser.php?id=${userId}&option=password&value=${password}`);
 		const data = await response.text();
 		document.getElementById('alert').innerHTML = data;
 	}

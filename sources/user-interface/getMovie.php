@@ -10,13 +10,11 @@ function getMovie($date1, $date2)
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<div class='movie-card'><div class='movie-title'>" . $row["title"] . "</div><div class='movie-img'></div><div id=" . $row["id_movie"] . " class='select-movie'>View</div></div>\n";
+            echo "<div class='movie-card'><div class='movie-title'>" . $row["title"]
+            . "</div><div class='movie-img'></div><div id="
+            . $row["id_movie"] . " class='select-movie'>View</div></div>\n";
         }
     } else {
         echo "No movie found";
     }
-}
-
-if (isset($_GET['date1']) && isset($_GET['date2'])) {
-    getMovie($_GET['date1'], $_GET['date2']);
 }

@@ -36,10 +36,6 @@ if (!checkPassword($id, $pwd)) {
     <div id="center">
         <h1>Movie</h1>
         <div id="movie-container">
-            <!-- <div class="movie-card">
-                <div class="movie-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; animation: marquee 10s linear infinite;">Spider man</div>
-                <img src="https://fr.web.img5.acsta.net/medias/nmedia/00/00/00/33/spiderman.jpg" class="movie-img">
-                <div class="movie-session"></div> -->
         </div>
         <div class="search-container">
             <input type="date" id="date1" name="date1" value="2020-10-31">
